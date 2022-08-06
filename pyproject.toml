@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "clickhouse-transform"
+version = "0.1.0"
+description = "Build custom transformation pipelines for Clickhouse using an intuitive and expressive dataframe API"
+authors = ["Michael Harris <mharris@luabase.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/mharrisb1/clickhouse-transform"
+homepage = "https://github.com/mharrisb1/clickhouse-transform"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+dask = "^2022.7.1"
+daglib = "0.6.0"
+ibis-framework = {extras = ["clickhouse"], version = "^3.1.0"}
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+black = "^22.6.0"
+five18 = "^0.1.0"
+jupyter = "^1.0.0"
+graphviz = "^0.20.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 121
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.idea
+  | \.venv
+  | admin
+  | dist
+  | nbs
+)/
+'''
